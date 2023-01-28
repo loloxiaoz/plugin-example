@@ -1,0 +1,22 @@
+[package]
+name = "common"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+abi_stable = { version = "=0.10.3" }
+arrayvec = "0.5.1"
+core_extensions = { version = "1.4.0", default_features = false, features = [
+	"std",
+] }
+regex = "1"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+chrono = "0.4"
+strum = { version = "0.20", features = ["derive"] }
+thiserror = "1.0.22"
+anyhow = "1.0.34"
+enum-iterator = "0.6.0"
+toml = "0.5"
+strum_macros = "0.20"

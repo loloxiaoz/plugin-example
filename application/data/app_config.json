@@ -1,18 +1,16 @@
-# 插件示例
-
-[A Plugin System in Rust](https://nullderef.com/series/rust-plugins/)
-
-## abi_stable
-
-执行make build, 输出
-
-```shell
-
-load "plugin_fw" success
-load "plugin_server" success
-
-command:
 {
+	"plugins": [
+		{
+			"name": "plugin_fw",
+			"rename": "plugin_fw"
+		},
+		{
+			"name": "plugin_server"
+		}
+	],
+	"_hidden": [],
+	"commands": {
+		"plugin_fw": {
 			"header": {
 				"request_id": "{{device_id}}-13",
 				"msg_type": "request",
@@ -49,15 +47,8 @@ command:
 					"response_requested": "Complete"
 				}
 			}
-		}
-reponse:
-    send messge to plugin firewall success
-from:
-    "plugin_fw"
-
-
-command:
-{
+		},
+		"plugin_server": {
 			"header": {
 				"request_id": "{{device_id}}-13",
 				"msg_type": "request",
@@ -92,8 +83,5 @@ command:
 				}
 			}
 		}
-reponse:
-    send messge to plugin server success
-from:
-    "plugin_server"
-```
+	}
+}
